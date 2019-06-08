@@ -12,26 +12,30 @@
 (use-package company
   :hook (prog-mode . company-mode))
 
+;;; lsp-related:
 ;; lsp
 (use-package lsp-mode
   :hook (prog-mode . lsp)
   :commands lsp)
-
 ;; lsp-ui
 (use-package lsp-ui
   :commands lsp-ui-mode)
-
 ;; company-lsp
 (use-package company-lsp
   :commands company-lsp)
 
+;;; rust-related:
 ;; rust-mode
 (use-package rust-mode)
+;; toml-mode
+(use-package toml-mode)
 
+;;; flycheck-related:
 ;; flycheck
 (use-package flycheck
   :hook (prog-mode . flycheck-mode)
   :config (setq flycheck-emacs-lisp-load-path 'inherit))
+;; flycheck-rust
 (use-package flycheck-rust
   :config (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
