@@ -1,5 +1,6 @@
+;;; init-settings.el --- Package-related settings
+;;; Commentary:
 ;; Harry Ying's Emacs config
-;; Package-related settings
 
 ;;; code:
 ;; enable company globally
@@ -18,9 +19,12 @@
 (add-hook 'lsp-mode-hook 'lsp-ui-mode)
 
 ;; flycheck
+;;; init-settings.el --- Package-related settings
 (add-hook 'prog-mode-hook 'flycheck-mode)
 
 ;; yasnippet
 (yas-global-mode 1)
 
 (provide 'init-settings)
+
+;;; init-settings.el ends here

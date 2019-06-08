@@ -1,6 +1,9 @@
-;; Harry Ying's Emacs config
-;; Key Bindings
+;;; init-keybindings.el --- Key Bindings
 
+;;; commentary:
+;; Harry Ying's Emacs config
+
+;;; code:
 ;; spelling check
 (global-set-key (kbd "<f2>") 'ispell)
 (global-set-key (kbd "<f3>") 'flyspell-mode)
@@ -9,3 +12,5 @@
 (global-set-key (kbd "<f8>") 'neotree-toggle)
 
 (provide 'init-keybindings)
+
+;;; init-keybindings.el ends here

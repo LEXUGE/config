@@ -1,5 +1,6 @@
+;;; init-packages.el --- Initialize the package-related tasks
+;;; Commentary:
 ;; Harry Ying's Emacs config
-;; Initialize the package-related tasks
 
 ;;; code:
 ;; enable GNU ELPA and MELPA from TUNA
@@ -10,7 +11,7 @@
 			   ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/"))))
 
 ;; cl - Common Lisp Extension
-(require 'cl)
+(require 'cl-lib)
 
 ;; Add Packages
 (defvar my/packages '(
@@ -30,13 +31,13 @@
 		      flycheck
 		      ;; rust-mode
 		      rust-mode
-		      ) "Default packages")
+		      ) "Default packages.")
 
 (setq package-selected-packages my/packages)
 
 ;; check the status of installation of 'my/packages'
 (defun my/packages-installed-p ()
-  (loop for pkg in my/packages
+  (cl-loop for pkg in my/packages
 	when (not (package-installed-p pkg)) do (return nil)
 	finally (return t)))
 
@@ -49,3 +50,5 @@
 	(package-install pkg))))
 
 (provide 'init-packages)
+
+;;; init-packages.el ends here
