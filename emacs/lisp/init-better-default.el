@@ -11,8 +11,5 @@
 (setq make-backup-files nil)
 
 (provide 'init-better-default)
-;;; init-better-default.el --- Packages's settings
-
-(provide 'init-better-default)
 
 ;;; init-better-default.el ends here
