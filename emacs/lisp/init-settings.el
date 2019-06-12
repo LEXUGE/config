@@ -54,6 +54,7 @@
   :config
   (setq auto-package-update-delete-old-versions t)
   (setq auto-package-update-hide-results t)
+  (setq auto-package-update-interval 3)
   (auto-package-update-maybe))
 
 (provide 'init-settings)

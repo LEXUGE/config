@@ -11,6 +11,9 @@
 ;; neotree
 (global-set-key (kbd "<f8>") 'neotree-toggle)
 
+;; toggle linewrap
+(global-set-key (kbd "<f7>") 'toggle-truncate-lines)
+
 (provide 'init-keybindings)
 
 ;;; init-keybindings.el ends here

@@ -9,7 +9,8 @@
 
 ;; turn off the auto-backup and enhance the auto-save feature
 (setq make-backup-files nil)
-(setq auto-save-visited-mode t)
+(setq backup-inhibited t)  ;; turn off backup
+(auto-save-visited-mode)
 
 (provide 'init-better-default)
 
