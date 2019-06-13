@@ -14,6 +14,9 @@
 ;; toggle linewrap
 (global-set-key (kbd "<f7>") 'toggle-truncate-lines)
 
+;; toggle evil-mode
+(global-set-key (kbd "<f6>") 'evil-mode)
+
 (provide 'init-keybindings)
 
 ;;; init-keybindings.el ends here

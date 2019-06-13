@@ -8,6 +8,9 @@
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
 
+;; evil mode
+(use-package evil)
+
 ;; enable company in prog-mode
 (use-package company
   :hook (prog-mode . company-mode))
