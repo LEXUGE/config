@@ -60,6 +60,9 @@
   (setq auto-package-update-interval 3)
   (auto-package-update-maybe))
 
+;; htmlize
+(use-package htmlize)
+
 (provide 'init-settings)
 
 ;;; init-settings.el ends here
