@@ -25,7 +25,7 @@ If you want to use RLS, you need to add following components in rustup:
 ```
 rustup component add rls rust-src rust-analysis
 ```
-Then use `cargo build` in your project dictionary for the first time.
+Then use `cargo build` in your project root folder for the first time.
 
 # Usage
 Simply override your own configs.
