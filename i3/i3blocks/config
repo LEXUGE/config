@@ -38,15 +38,15 @@ markup=pango
 interval=1
 separator=false
 
+[wifi]
+instance=wlp2s0
+interval=10
+separator=false
+
 [iface]
 #instance=wlan0
 color=#00FF00
 interval=10
-
-[wifi]
-#instance=wlp3s0
-interval=10
-separator=false
 
 # Volume indicator
 #
@@ -94,7 +94,7 @@ label=CPU
 interval=1
 min_width=CPU 100.00%
 separator=false
-color=#EE4540
+color=#42BFF5
 
 # Temperature
 #
@@ -104,7 +104,7 @@ color=#EE4540
 [temperature]
 label=TEMP
 interval=1
-color=#EE4540
+color=#42BFF5
 
 #[load_average]
 #interval=10
