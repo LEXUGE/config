@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Roboto 8
+font pango:Roboto 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -171,7 +171,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3blocks
-	font pango:Roboto 8
+	font pango:Roboto 9
 	position top
 }
 
@@ -197,3 +197,5 @@ bindsym $mod+Pause mode "$mode_system"
 exec --no-startup-id fcitx
 # Autostart polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# Autostart fehbg
+exec --no-startup-id feh --bg-fill '/home/ash-heruto/wallpaper.jpg'

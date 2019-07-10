@@ -5,7 +5,8 @@ Harry Ying's configs
 File | Description
 --- | ---
 `emacs/` | Emacs configs
-`config` | i3wm config
+`i3/i3wm/config` | i3wm config
+`i3/i3blocks/config` | i3blocks config
 
 # Prerequisites
 Assume you are using Arch Linux in which the package manager is `pacman`.  
@@ -19,6 +20,10 @@ $ sudo pacman -S aspell aspell-en
 In the `i3wm` dotfile, I use two fonts, `ttf-roboto` and `wqy-microhei`. Therefore, install these packages:  
 ```
 $ sudo pacman -S ttf-roboto wqy-microhei
+```
+The config also requires `feh` as wallpaper setter, and several packages that are used by `i3blocks`:  
+```
+$ sudo pacman -S acpi bc lm_sensors playerctl alsa-utils sysstat feh
 ```
 ## RLS (Rust Language Server)
 If you want to use RLS, you need to add following components in rustup:  
