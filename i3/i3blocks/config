@@ -40,13 +40,13 @@ separator=false
 
 [wifi]
 instance=wlp2s0
-interval=10
+interval=1
 separator=false
 
 [iface]
 #instance=wlan0
 color=#00FF00
-interval=10
+interval=1
 
 # Volume indicator
 #
@@ -67,13 +67,13 @@ signal=10
 [memory]
 label=MEM
 separator=false
-interval=30
+interval=1
 
 [memory]
 label=SWAP
 instance=swap
 separator=false
-interval=30
+interval=1
 
 # Disk usage
 #
@@ -83,7 +83,7 @@ interval=30
 [disk]
 label=HOME
 #instance=/mnt/data
-interval=30
+interval=1
 
 # CPU usage
 #
