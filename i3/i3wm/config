@@ -37,8 +37,9 @@ bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
 # screenshot
-bindsym --release Print exec --no-startup-id scrot
-bindsym --release Shift+Print exec --no-startup-id scrot -s
+bindsym --release Print exec --no-startup-id gnome-screenshot
+bindsym --release Ctrl+Print exec --no-startup-id gnome-screenshot -w
+bindsym --release Shift+Print exec --no-startup-id gnome-screenshot -a
 
 # kill focused window
 bindsym $mod+Shift+q kill

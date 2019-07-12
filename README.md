@@ -21,9 +21,9 @@ In the `i3wm` dotfile, I use two fonts, `ttf-roboto` and `wqy-microhei`. Therefo
 ```
 $ sudo pacman -S ttf-roboto wqy-microhei
 ```
-The config also requires `feh` as wallpaper setter, `light` for backlight control and several packages that are used by `i3blocks`:  
+The config also requires `feh` as wallpaper setter, `gnome-screenshot` as screenshot taker, `light` for backlight control and several packages that are used by `i3blocks`:  
 ```
-$ sudo pacman -S acpi bc lm_sensors playerctl alsa-utils sysstat feh light
+$ sudo pacman -S acpi bc lm_sensors playerctl alsa-utils sysstat feh light gnome-screenshot
 ```
 ## RLS (Rust Language Server)
 If you want to use RLS, you need to add following components in rustup:  
