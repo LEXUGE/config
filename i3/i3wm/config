@@ -198,6 +198,11 @@ mode "$mode_system" {
 }
 bindsym $mod+Pause mode "$mode_system"
 
+# Set boarder styles
+default_border none
+default_floating_border normal
+hide_edge_borders both
+
 # Autostart fcitx
 exec --no-startup-id fcitx
 # Autostart polkit-gnome
