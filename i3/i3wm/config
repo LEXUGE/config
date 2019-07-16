@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Roboto 13px
+font pango:Roboto 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -50,7 +50,8 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # use dmenu option to customize the font.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'Roboto:regular:pixelsize=15'"
+bindsym $mod+d exec --no-startup-id rofi -theme glue_pro_blue -font "Roboto 13" -combi-modi window#drun#ssh -show combi
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p 'Apps' -fn 'Roboto:regular:pixelsize=15'"
 
 # change focus
 bindsym $mod+j focus left
@@ -177,7 +178,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3blocks
-	font pango:Roboto 13px
+	font pango:Roboto 10
 	position top
 }
 
