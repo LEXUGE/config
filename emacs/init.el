@@ -8,10 +8,10 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp/"))
 
 ;; package initialize
-(require 'init-packages)
+(require 'init-packages-meta)
 
 ;; package settings
-(require 'init-settings)
+(require 'init-packages)
 
 ;; keybindings
 (require 'init-keybindings)
