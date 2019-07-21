@@ -7,6 +7,9 @@
 ;; highlights current line
 (global-hl-line-mode 1)
 
+;; auto reload files
+(global-auto-revert-mode t)
+
 ;; enhance the backup and auto-save features
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup/"))
   backup-by-copying t    ; Don't delink hardlinks
