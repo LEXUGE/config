@@ -36,6 +36,11 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
+# setup volume control
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse set Master 5%- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master toggle
+
 # screenshot
 bindsym --release Print exec --no-startup-id gnome-screenshot
 bindsym --release Ctrl+Print exec --no-startup-id gnome-screenshot -w
