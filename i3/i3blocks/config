@@ -48,18 +48,10 @@ separator=false
 color=#00FF00
 interval=1
 
-# Volume indicator
-#
-# The first parameter sets the step (and units to display)
-# The second parameter overrides the mixer selection
-# See the script for details.
-[volume]
-label=VOL
-#label=♪
-instance=Master
-#instance=PCM
+[volume-pulseaudio]
+command=/home/ash-heruto/.config/i3blocks/volume-pulseaudio
 interval=once
-signal=10
+signal=1
 
 # Memory usage
 #

@@ -9,6 +9,6 @@ echo "Done"
 # sync i3wm config
 echo -n "Syncing i3wm and i3blocks config..."
 cp ~/.config/i3/config $(pwd)/i3/i3wm
-cp ~/.config/i3blocks/config $(pwd)/i3/i3blocks
+cp -r ~/.config/i3blocks/ $(pwd)/i3/
 echo "Done"
 

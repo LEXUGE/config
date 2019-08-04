@@ -6,7 +6,7 @@ File | Description
 --- | ---
 `emacs/` | Emacs configs
 `i3/i3wm/config` | i3wm config
-`i3/i3blocks/config` | i3blocks config
+`i3/i3blocks/` | i3blocks config and scripts
 
 # Prerequisites
 Assume you are using Arch Linux in which the package manager is `pacman`.  
@@ -17,9 +17,9 @@ $ sudo pacman -S aspell aspell-en
 ```
 (`aspell-en` can be supplanted by `aspell-*` in order to use dictionaries other than English)  
 ## i3wm
-In the `i3wm` dotfile, I use two fonts, `ttf-roboto` and `wqy-microhei`. Therefore, install these packages:  
+In the `i3wm` and `i3blocks` dotfiles, I use some fonts. Therefore, install these packages:  
 ```
-$ sudo pacman -S ttf-roboto wqy-microhei
+$ sudo pacman -S ttf-roboto wqy-microhei ttf-font-awesome
 ```
 The config also requires `rofi` as app launcher, `feh` as wallpaper setter, `gnome-screenshot` as screenshot taker, `light` for backlight control and several packages that are used by `i3blocks`:  
 ```
