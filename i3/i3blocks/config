@@ -53,7 +53,7 @@ separator=false
 [essid]
 label=
 command=~/.config/i3blocks/essid
-interval=60
+interval=1
 
 [volume-pulseaudio]
 command=~/.config/i3blocks/volume-pulseaudio
