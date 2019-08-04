@@ -39,6 +39,7 @@ interval=1
 separator=false
 
 [wifi]
+label=
 instance=wlp2s0
 interval=1
 separator=false
@@ -47,9 +48,15 @@ separator=false
 #instance=wlan0
 color=#00FF00
 interval=1
+separator=false
+
+[essid]
+label=
+command=~/.config/i3blocks/essid
+interval=60
 
 [volume-pulseaudio]
-command=/home/ash-heruto/.config/i3blocks/volume-pulseaudio
+command=~/.config/i3blocks/volume-pulseaudio
 interval=once
 signal=1
 
@@ -57,15 +64,15 @@ signal=1
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=MEM
+label=
 separator=false
 interval=1
 
-[memory]
-label=SWAP
-instance=swap
-separator=false
-interval=1
+#[memory]
+#label=SWAP
+#instance=swap
+#separator=false
+#interval=1
 
 # Disk usage
 #
@@ -73,7 +80,7 @@ interval=1
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=HOME
+label=
 #instance=/mnt/data
 interval=1
 
@@ -82,7 +89,7 @@ interval=1
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=CPU
+label=
 interval=1
 min_width=CPU 100.00%
 separator=false
@@ -94,26 +101,27 @@ color=#42BFF5
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [temperature]
-label=TEMP
+label=
 interval=1
 color=#42BFF5
 
-#[load_average]
-#interval=10
+[gpu-load]
+command=~/.config/i3blocks/gpu-load
+label=GPU
+interval=1
+min_width=GPU 100% 100% 100% 100%
+#T_WARN=70
+#T_CRIT=90
 
-# Battery indicator
-#
-# The battery instance defaults to 0.
-[battery]
-#label=BAT
-label=⚡
-#instance=1
+[battery2]
+command=~/.config/i3blocks/battery2
+markup=pango
 interval=1
 
 # Date Time
 #
 [time]
-command=date '+%Y-%m-%d %H:%M:%S'
+command=date '+%m-%d %H:%M:%S'
 interval=1
 
 # Generic media player support
