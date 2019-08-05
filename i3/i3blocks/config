@@ -91,7 +91,7 @@ interval=1
 [cpu_usage]
 label=
 interval=1
-min_width=CPU 100.00%
+min_width= 100.00%
 separator=false
 color=#42BFF5
 
