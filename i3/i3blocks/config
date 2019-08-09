@@ -59,6 +59,7 @@ interval=1
 command=~/.config/i3blocks/volume-pulseaudio
 interval=once
 signal=1
+separator=false
 
 [microphone]
 command=~/.config/i3blocks/microphone
