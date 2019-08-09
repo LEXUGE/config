@@ -60,6 +60,11 @@ command=~/.config/i3blocks/volume-pulseaudio
 interval=once
 signal=1
 
+[microphone]
+command=~/.config/i3blocks/microphone
+label=
+interval=1
+
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
