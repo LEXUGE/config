@@ -18,7 +18,9 @@
   kept-new-versions 20   ; how many of the newest versions to keep
   kept-old-versions 5    ; and how many of the old
   )
-(auto-save-visited-mode 1)
+(setq auto-save-file-name-transforms
+  `((".*" "~/.emacs.d/auto-saves/" t)))
+(setq auto-save-timeout 5)
 
 (provide 'init-better-default)
 

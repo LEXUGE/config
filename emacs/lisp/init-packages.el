@@ -66,6 +66,11 @@
 ;; htmlize for nikola
 (use-package htmlize)
 
+;; pdf-tools
+(use-package pdf-tools
+  :magic ("%PDF" . pdf-view-mode)
+  :config (pdf-tools-install))
+
 (provide 'init-packages)
 
 ;;; init-packages.el ends here
