@@ -12,3 +12,8 @@ cp ~/.config/i3/config $(pwd)/i3/i3wm
 cp -r ~/.config/i3blocks/ $(pwd)/i3/
 echo "Done"
 
+# sync package list
+echo -n "Syncing package list..."
+pacman -Qne > native-package-list
+pacman -Qme > aur-package-list
+echo "Done"

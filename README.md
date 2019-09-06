@@ -7,6 +7,8 @@ File | Description
 `emacs/` | Emacs configs
 `i3/i3wm/config` | i3wm config
 `i3/i3blocks/` | i3blocks config and scripts
+`native-package-list` | All the official packages installed
+`aur-package-list` | All the AUR packages installed
 
 # Prerequisites
 Assume you are using Arch Linux in which the package manager is `pacman`.  
