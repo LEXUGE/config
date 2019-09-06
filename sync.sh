@@ -14,6 +14,6 @@ echo "Done"
 
 # sync package list
 echo -n "Syncing package list..."
-pacman -Qne > native-package-list
-pacman -Qme > aur-package-list
+pacman -Qneq > native-package-list
+pacman -Qmeq > aur-package-list
 echo "Done"
