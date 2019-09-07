@@ -99,8 +99,10 @@ mesa-demos
 nano
 ncdu
 neofetch
-netctl
+network-manager-applet
+networkmanager
 nikola
+nm-connection-editor
 nmap
 npm
 nvidia-390xx

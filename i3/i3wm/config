@@ -224,3 +224,5 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id feh --bg-fill '/home/ash-heruto/wallpaper.jpg'
 # Autostart jupyter notebook
 exec --no-startup-id jupyter notebook --no-browser
+# Autostart nm-applet
+exec --no-startup-id nm-applet
