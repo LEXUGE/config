@@ -20,6 +20,7 @@ calibre
 chromium
 coreutils
 cryptsetup
+deluge
 device-mapper
 dhcpcd
 diffutils
@@ -75,6 +76,7 @@ iperf
 iproute2
 iputils
 jfsutils
+jupyter-notebook
 klavaro
 less
 lib32-nvidia-390xx-utils
@@ -116,6 +118,7 @@ playerctl
 polkit-gnome
 poppler-glib
 powerline-fonts
+powertop
 procps-ng
 proxychains-ng
 psmisc
@@ -157,6 +160,7 @@ texlive-publishers
 texlive-science
 thunar
 thunderbird
+tor-browser
 ttf-font-awesome
 ttf-liberation
 ttf-opensans
