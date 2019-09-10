@@ -110,6 +110,7 @@ nvidia-settings
 openssh
 pacman
 pacman-contrib
+pandoc
 patch
 pavucontrol
 pciutils
