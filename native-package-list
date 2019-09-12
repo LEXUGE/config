@@ -14,6 +14,9 @@ bc
 bind-tools
 binutils
 bison
+blueman
+bluez
+bluez-utils
 btrfs-progs
 bzip2
 calibre
@@ -126,6 +129,7 @@ procps-ng
 proxychains-ng
 psmisc
 pulseaudio
+pulseaudio-bluetooth
 pygmentize
 python-aiohttp
 python-ghp-import

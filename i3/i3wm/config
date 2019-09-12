@@ -226,3 +226,5 @@ exec --no-startup-id feh --bg-fill '/home/ash-heruto/wallpaper.jpg'
 exec --no-startup-id jupyter notebook --no-browser
 # Autostart nm-applet
 exec --no-startup-id nm-applet
+# Autostart blueman
+exec --no-startup-id blueman-applet
