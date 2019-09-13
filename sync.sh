@@ -1,5 +1,11 @@
 #!/bin/zsh
 
+# Cleanup and create new dirs
+echo -n "Cleaning up..."
+rm -rf $(pwd)/emacs $(pwd)/i3*
+mkdir -p $(pwd)/emacs $(pwd)/i3/i3wm
+echo "Done"
+
 # sync Emacs configs
 echo -n "Syncing Emacs configs..."
 cp ~/.emacs.d/init.el $(pwd)/emacs

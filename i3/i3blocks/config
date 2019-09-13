@@ -50,10 +50,6 @@ color=#00FF00
 interval=1
 separator=false
 
-[essid]
-label=
-interval=1
-
 [volume-pulseaudio]
 interval=once
 signal=1
@@ -94,7 +90,6 @@ interval=1
 [cpu_usage]
 label=
 interval=1
-min_width= 100.00%
 separator=false
 color=#42BFF5
 
