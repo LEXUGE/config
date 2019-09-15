@@ -42,6 +42,7 @@ fcitx-qt5
 fcitx-rime
 feh
 file
+file-roller
 filesystem
 findutils
 firefox
@@ -167,6 +168,7 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 thunar
+thunar-archive-plugin
 thunderbird
 tor-browser
 ttf-font-awesome
