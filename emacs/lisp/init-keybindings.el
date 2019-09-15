@@ -18,10 +18,10 @@
 (global-set-key (kbd "<f6>") 'evil-mode)
 
 ;; resizing window
-(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-<down>") 'shrink-window)
-(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+(global-set-key (kbd "M-H") 'shrink-window-horizontally)
+(global-set-key (kbd "M-L") 'enlarge-window-horizontally)
+(global-set-key (kbd "M-J") 'shrink-window)
+(global-set-key (kbd "M-K") 'enlarge-window)
 
 (provide 'init-keybindings)
 
