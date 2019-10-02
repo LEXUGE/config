@@ -228,3 +228,5 @@ exec --no-startup-id jupyter notebook --no-browser
 exec --no-startup-id nm-applet
 # Autostart blueman
 exec --no-startup-id blueman-applet
+# Autostart gebaar
+exec --no-startup-id gebaard -b

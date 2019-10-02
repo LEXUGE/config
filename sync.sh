@@ -2,8 +2,8 @@
 
 # Cleanup and create new dirs
 echo -n "Cleaning up..."
-rm -rf $(pwd)/emacs $(pwd)/i3*
-mkdir -p $(pwd)/emacs $(pwd)/i3/i3wm
+rm -rf $(pwd)/emacs $(pwd)/i3* $(pwd)/gebaar
+mkdir -p $(pwd)/emacs $(pwd)/i3/i3wm $(pwd)/gebaar
 echo "Done"
 
 # sync Emacs configs
@@ -16,6 +16,11 @@ echo "Done"
 echo -n "Syncing i3wm and i3blocks config..."
 cp ~/.config/i3/config $(pwd)/i3/i3wm
 cp -r ~/.config/i3blocks/ $(pwd)/i3/
+echo "Done"
+
+# sync gebaar config
+echo -n "Syncing gebaar config..."
+cp ~/.config/gebaar/gebaard.toml $(pwd)/gebaar
 echo "Done"
 
 # sync package list

@@ -33,6 +33,7 @@ e2fsprogs
 efibootmgr
 efitools
 emacs
+evince
 fakeroot
 fcitx
 fcitx-configtool
@@ -135,11 +136,13 @@ pulseaudio-bluetooth
 pygmentize
 python-aiohttp
 python-ghp-import
+python-pip
 python-watchdog
 reaver
 reiserfsprogs
 restic
 rofi
+rsync
 s-nail
 sbsigntools
 sed
