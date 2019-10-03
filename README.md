@@ -10,6 +10,7 @@ File | Description
 `gebaar/` | Gebaar gesture config
 `native-package-list` | All the official packages installed
 `aur-package-list` | All the AUR packages installed
+`hooks` | All the pacman hook configs
 
 # Prerequisites
 Assume you are using Arch Linux in which the package manager is `pacman`.  
@@ -24,9 +25,9 @@ In the `i3wm` and `i3blocks` dotfiles, I use some fonts. Therefore, install thes
 ```
 $ sudo pacman -S ttf-roboto wqy-microhei ttf-font-awesome
 ```
-The config also requires `rofi` as app launcher, `feh` as wallpaper setter, `gnome-screenshot` as screenshot taker, `light` for backlight control and several packages that are used by `i3blocks`:  
+The config also requires `rofi` as app launcher, `feh` as wallpaper setter, `gnome-screenshot` as screenshot taker, `light` for backlight control and several packages that are used by `i3blocks`, `xss-lock` as **IMPORTANT** screen lock hooker:  
 ```
-$ sudo pacman -S rofi acpi bc lm_sensors playerctl alsa-utils sysstat feh light gnome-screenshot
+$ sudo pacman -S rofi acpi bc lm_sensors playerctl alsa-utils sysstat feh light gnome-screenshot xss-lock
 ```
 ## RLS (Rust Language Server)
 If you want to use RLS, you need to add following components in rustup:  

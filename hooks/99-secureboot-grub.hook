@@ -1,0 +1,13 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = grub
+
+[Action]
+Description = Signing GRUB for SecureBoot
+When = PostTransaction
+Exec = /usr/bin/find /efi/ -name 'grub*' -exec /usr/bin/sh -c 'if ! /usr/bin/sbverify --list {} 2>/dev/null | /usr/bin/grep -q "signature certificates"; then /usr/bin/sbsign --key /home/ash-heruto/SecureBoot/db.key --cert /home/ash-heruto/SecureBoot/db.crt --output {} {}; fi' \ ;
+Depends = sbsigntools
+Depends = findutils
+Depends = grep

@@ -2,7 +2,7 @@
 
 # Cleanup and create new dirs
 echo -n "Cleaning up..."
-rm -rf $(pwd)/emacs $(pwd)/i3* $(pwd)/gebaar
+rm -rf $(pwd)/emacs $(pwd)/i3* $(pwd)/gebaar $(pwd)/hooks
 mkdir -p $(pwd)/emacs $(pwd)/i3/i3wm $(pwd)/gebaar
 echo "Done"
 
@@ -21,6 +21,11 @@ echo "Done"
 # sync gebaar config
 echo -n "Syncing gebaar config..."
 cp ~/.config/gebaar/gebaard.toml $(pwd)/gebaar
+echo "Done"
+
+# sync Pacman hooks
+echo -n "Syncing pacman hooks..."
+cp -r /etc/pacman.d/hooks/ $(pwd)/
 echo "Done"
 
 # sync package list
