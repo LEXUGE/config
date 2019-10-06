@@ -9,6 +9,7 @@ aspell
 aspell-en
 autoconf
 automake
+base
 bash
 bc
 bind-tools
