@@ -25,9 +25,9 @@ In the `i3wm` and `i3blocks` dotfiles, I use some fonts. Therefore, install thes
 ```
 $ sudo pacman -S ttf-roboto wqy-microhei ttf-font-awesome
 ```
-The config also requires `rofi` as app launcher, `feh` as wallpaper setter, `gnome-screenshot` as screenshot taker, `light` for backlight control and several packages that are used by `i3blocks`, `xss-lock` as **IMPORTANT** screen lock hooker:  
+The config also requires `rofi` as app launcher, `feh` as wallpaper setter, `gnome-screenshot` as screenshot taker, `light` for backlight control and several packages that are used by `i3blocks`, `xss-lock` as **IMPORTANT** screen lock hooker, `pacman-contrib` for update checker:  
 ```
-$ sudo pacman -S rofi acpi bc lm_sensors playerctl alsa-utils sysstat feh light gnome-screenshot xss-lock
+$ sudo pacman -S rofi acpi bc lm_sensors playerctl alsa-utils sysstat feh light gnome-screenshot xss-lock pacman-contrib
 ```
 ## RLS (Rust Language Server)
 If you want to use RLS, you need to add following components in rustup:  
