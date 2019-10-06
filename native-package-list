@@ -9,6 +9,7 @@ aspell
 aspell-en
 autoconf
 automake
+base
 bash
 bc
 bind-tools
@@ -107,6 +108,7 @@ mesa-demos
 nano
 ncdu
 neofetch
+netctl
 network-manager-applet
 networkmanager
 nikola

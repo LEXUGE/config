@@ -50,6 +50,15 @@ min_width= 100%
 color=#00FF00
 interval=1
 
+[arch-update]
+markup=pango
+interval= 3600
+QUIET=TRUE
+BASE_COLOR=#5fff5f
+UPDATE_COLOR=#FFFF85
+# AUR=true
+LABEL=  
+
 [volume-pulseaudio]
 interval=once
 signal=1
