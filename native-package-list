@@ -52,11 +52,13 @@ flex
 gawk
 gcc
 gcc-libs
+gebaar
 geogebra
 gettext
 git
 glibc
 gnome-calculator
+gnome-podcasts
 gnome-screenshot
 gnome-terminal
 gnu-netcat
@@ -140,8 +142,10 @@ python-pip
 python-watchdog
 reaver
 reiserfsprogs
+remmina
 restic
 rofi
+rp-pppoe
 rsync
 s-nail
 sbsigntools
@@ -174,6 +178,7 @@ thunar
 thunar-archive-plugin
 thunderbird
 tor-browser
+traceroute
 ttf-font-awesome
 ttf-liberation
 ttf-opensans
