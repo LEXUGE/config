@@ -63,8 +63,8 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # use dmenu option to customize the font.
-bindsym $mod+d exec --no-startup-id "rofi -theme glue_pro_blue -font \\"Roboto 13\\" -combi-modi window,drun -show combi"
-bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p 'Apps' -fn 'Roboto:regular:pixelsize=15'"
+bindsym $mod+d exec --no-startup-id "rofi -theme glue_pro_blue -font \\"Roboto 13\\" -combi-modi drun,window -show combi"
+bindsym $mod+Shift+d exec --no-startup-id "rofi -theme glue_pro_blue -font \\"Roboto 13\\" rofi  -show find -modi find:~/.local/share/rofi/finder.sh"
 
 # change focus
 bindsym $mod+j focus left

@@ -2,8 +2,8 @@
 
 # Cleanup and create new dirs
 echo -n "Cleaning up..."
-rm -rf $(pwd)/emacs $(pwd)/i3* $(pwd)/gebaar $(pwd)/hooks
-mkdir -p $(pwd)/emacs $(pwd)/i3/i3wm $(pwd)/gebaar
+rm -rf $(pwd)/emacs $(pwd)/i3* $(pwd)/gebaar $(pwd)/hooks $(pwd)/rofi
+mkdir -p $(pwd)/emacs $(pwd)/i3/i3wm $(pwd)/gebaar $(pwd)/rofi
 echo "Done"
 
 # sync Emacs configs
@@ -27,6 +27,10 @@ echo "Done"
 echo -n "Syncing pacman hooks..."
 cp -r /etc/pacman.d/hooks/ $(pwd)/
 echo "Done"
+
+# sync rofi scripts
+echo -n "Syncing rofi scripts..."
+cp -r ~/.local/share/rofi $(pwd)/
 
 # sync package list
 echo -n "Syncing package list..."

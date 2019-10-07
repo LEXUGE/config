@@ -10,7 +10,8 @@ File | Description
 `gebaar/` | Gebaar gesture config
 `native-package-list` | All the official packages installed
 `aur-package-list` | All the AUR packages installed
-`hooks` | All the pacman hook configs
+`hooks/` | All the pacman hook configs
+`rofi/` | rofi scripts
 
 # Prerequisites
 Assume you are using Arch Linux in which the package manager is `pacman`.  
