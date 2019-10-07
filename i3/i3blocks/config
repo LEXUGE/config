@@ -52,7 +52,7 @@ interval=1
 
 [arch-update]
 markup=pango
-interval= 3600
+interval= 600
 QUIET=TRUE
 BASE_COLOR=#5fff5f
 UPDATE_COLOR=#FFFF85
