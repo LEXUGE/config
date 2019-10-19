@@ -220,6 +220,7 @@ hide_edge_borders both
 
 # Setup Touchpad
 exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" 329 1
+exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" 337 1
 # Autostart fcitx
 exec --no-startup-id fcitx
 # Autostart polkit-gnome
