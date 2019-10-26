@@ -14,12 +14,14 @@ bc
 bind-tools
 binutils
 bison
+bleachbit
 blueman
 bluez
 bluez-utils
 btrfs-progs
 calibre
 chromium
+create_ap
 cryptsetup
 deluge
 device-mapper
@@ -99,6 +101,7 @@ networkmanager
 nikola
 nm-connection-editor
 nmap
+noto-fonts-emoji
 npm
 nvidia-390xx
 nvidia-settings
@@ -135,6 +138,7 @@ sbsigntools
 sipcalc
 snapper
 spotify
+sqlmap
 steam
 stubby
 sudo
