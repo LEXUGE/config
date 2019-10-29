@@ -52,6 +52,13 @@
 ;; neotree
 (use-package neotree)
 
+;; All the icon
+(use-package all-the-icons)
+
+;; Doom Mode line
+(use-package doom-modeline
+      :hook (after-init . doom-modeline-mode))
+
 ;; monokai-theme
 (use-package monokai-theme)
 
