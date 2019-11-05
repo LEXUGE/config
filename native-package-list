@@ -175,6 +175,9 @@ usbmuxd
 usbutils
 v2ray
 vi
+virtualbox
+virtualbox-guest-iso
+virtualbox-host-modules-arch
 vlc
 wget
 which

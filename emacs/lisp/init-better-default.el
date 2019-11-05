@@ -22,6 +22,11 @@
   `((".*" "~/.emacs.d/auto-saves/" t)))
 (setq auto-save-timeout 5)
 
+;; no useless UI elements
+(menu-bar-mode 1)
+(tool-bar-mode 0)
+(scroll-bar-mode 0)
+
 (provide 'init-better-default)
 
 ;;; init-better-default.el ends here

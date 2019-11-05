@@ -63,8 +63,9 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # use dmenu option to customize the font.
-bindsym $mod+d exec --no-startup-id "rofi -theme glue_pro_blue -no-levenshtein-sort -no-disable-history -font \\"Roboto 13\\" -combi-modi drun,window -show combi"
-bindsym $mod+Shift+d exec --no-startup-id "rofi -theme glue_pro_blue -no-levenshtein-sort -no-disable-history -font \\"Roboto 13\\" rofi  -show find -modi find:~/.local/share/rofi/finder.sh"
+bindsym $mod+d exec --no-startup-id "rofi -theme glue_pro_blue -no-disable-history -font \\"Roboto 13\\" -show drun"
+bindsym $mod+Shift+d exec --no-startup-id "rofi -theme glue_pro_blue -no-disable-history -font \\"Roboto 13\\" rofi  -show find -modi find:~/.local/share/rofi/finder.sh"
+bindsym $mod+Tab exec --no-startup-id "rofi -theme glue_pro_blue -no-disable-history -font \\"Roboto 13\\" -show window"
 
 # change focus
 bindsym $mod+j focus left
@@ -225,10 +226,6 @@ exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" 337 1
 exec --no-startup-id fcitx
 # Autostart polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# Autostart fehbg
-exec --no-startup-id feh --bg-fill '/home/ash-heruto/wallpaper.jpg'
-# Autostart jupyter notebook
-exec --no-startup-id jupyter notebook --no-browser
 # Autostart nm-applet
 exec --no-startup-id nm-applet
 # Autostart blueman
@@ -237,3 +234,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id gebaard -b
 # Autostart xss-lock
 exec --no-startup-id xss-lock -- $Locker &
+# Autostart fehbg
+exec --no-startup-id feh --bg-fill '/home/ash-heruto/wallpaper.jpg'
+# Autostart jupyter notebook
+exec --no-startup-id jupyter notebook --no-browser
