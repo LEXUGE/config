@@ -4,6 +4,9 @@
 ;; Harry Ying's Emacs config
 
 ;;; code:
+;; Unset Control+Z in case of mistyping
+(global-unset-key (kbd "C-z"))
+
 ;; spelling check
 (global-set-key (kbd "<f2>") 'ispell)
 (global-set-key (kbd "<f3>") 'flyspell-mode)

@@ -59,6 +59,13 @@ UPDATE_COLOR=#FFFF85
 # AUR=true
 LABEL=  
 
+
+[mediaplayer]
+instance=spotify
+interval=5
+signal=10
+separator=false
+
 [volume-pulseaudio]
 interval=once
 signal=1
