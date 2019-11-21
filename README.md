@@ -12,6 +12,7 @@ File | Description
 `aur-package-list` | All the AUR packages installed
 `hooks/` | All the pacman hook configs
 `rofi/` | rofi scripts
+`archinstall.sh` | Arch Linux automatic installer
 
 # Prerequisites
 Assume you are using Arch Linux in which the package manager is `pacman`.  
