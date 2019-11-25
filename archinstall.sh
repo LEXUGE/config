@@ -123,12 +123,12 @@ setup_bootloader(){
   arch_chroot "pacman -S grub efibootmgr --noconfirm"
 
   # Setup grub config
-  sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cryptdevice=UUID='"${cryptroot_uuid}"':cryptroot:allow-discards root=\/dev\/mapper\/cryptroot resume=\/dev\/mapper\/swapDevice rw"/' ${MOUNTPOINT}/etc/default/grub
+  sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cryptdevice=UUID='"${cryptroot_uuid}"':cryptroot:allow-discards root=\/dev\/mapper\/cryptroot rw"/' ${MOUNTPOINT}/etc/default/grub
   sed -i '/GRUB_ENABLE_CRYPTODISK=y/s/^#//' ${MOUNTPOINT}/etc/default/grub
 
   # Setup mkinitcpio.conf
   sed -i 's/FILES=()/FILES=(\/crypto_keyfile.bin)/' ${MOUNTPOINT}/etc/mkinitcpio.conf
-  sed -i '/^HOOK/s/([^()]*)/(base udev autodetect keyboard modconf block encrypt openswap resume filesystems fsck)/' ${MOUNTPOINT}/etc/mkinitcpio.conf
+  sed -i '/^HOOK/s/([^()]*)/(base udev autodetect keyboard modconf block encrypt openswap filesystems fsck)/' ${MOUNTPOINT}/etc/mkinitcpio.conf
   # Setup swap hooks
   echo "run_hook ()
 {
