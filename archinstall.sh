@@ -163,13 +163,27 @@ Operation = Install
 Operation = Upgrade
 Type = Package
 Target = linux*
-Target = mkinintcpio
 
 [Action]
 Description = Change the permission of the initramfs after kernel installation.
 When = PostTransaction
-Exec = /usr/bin/chmod 600 /boot/initramfs-linux-hardened.img /boot/initramfs-linux-hardened-fallback.img" > ${MOUNTPOINT}/etc/pacman.d/hooks/99-change-initramfs-permission.hook
+Exec = /bin/sh -c 'chmod 600 /boot/initramfs-linux*'
+" > ${MOUNTPOINT}/etc/pacman.d/hooks/99-change-initramfs-permission.hook
 
+  echo "[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = File
+Target = boot/vmlinuz-linu*
+
+[Action]
+Description = Updating GRUB Config
+Depends = grub
+When = PostTransaction
+Exec = /bin/sh -c 'grub-mkconfig -o /boot/grub/grub.cfg'
+" > ${MOUNTPOINT}/etc/pacman.d/hooks/98-update-grub.hook
+  
   arch_chroot "mkinitcpio -p linux-hardened"
   arch_chroot "grub-install --target=x86_64-efi --efi-directory=${ESP} --bootloader-id=GRUB --recheck"
   arch_chroot "grub-mkconfig -o /boot/grub/grub.cfg"
