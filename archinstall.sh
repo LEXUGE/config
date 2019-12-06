@@ -18,7 +18,7 @@ for e in "${@:2}"; do [[ $e == "$1" ]] && break; done;
 
 #SELECT DEVICE
 select_device(){
-  devices_list=$(lsblk -d | awk '{print "/dev/" $1}' | grep 'sd\|hd\|vd\|nvme\|mmcblk');
+  devices_list=(`lsblk -d | awk '{print "/dev/" $1}' | grep 'sd\|hd\|vd\|nvme\|mmcblk'`);
   PS3="$prompt1"
   echo -e "Attached Devices:\n"
   lsblk -lnp -I 2,3,8,9,22,34,56,57,58,65,66,67,68,69,70,71,72,91,128,129,130,131,132,133,134,135,259 | awk '{print $1,$4,$6,$7}'| column -t
@@ -35,6 +35,7 @@ select_device(){
 
 #CREATE_PARTITION
 create_partition(){
+  wipefs -a "${device}"
   # Set GPT scheme
   parted "${device}" mklabel gpt &> /dev/null
   # Create ESP for /efi
@@ -48,14 +49,14 @@ create_partition(){
 
 #FORMAT_PARTITION
 format_partition(){
-  mkfs.fat -F32 "${device}"1 > /dev/null
+  mkfs.fat -F32 "${device}"p1 > /dev/null
   
   echo "LUKS Setup for '/' partition"
-  cryptsetup luksFormat --type luks1 -s 512 -h sha512 -i 3000 "${device}"3
+  cryptsetup luksFormat --type luks1 -s 512 -h sha512 -i 3000 "${device}"p3
   echo "LUKS Setup for SWAP partition"
-  cryptsetup luksFormat -s 512 -h sha512 -i 3000 "${device}"2
+  cryptsetup luksFormat -s 512 -h sha512 -i 3000 "${device}"p2
   echo "Open '/' partition"
-  cryptsetup open "${device}"3 cryptroot
+  cryptsetup open "${device}"p3 cryptroot
   
   mkfs.xfs /dev/mapper/cryptroot > /dev/null
 }
@@ -64,7 +65,7 @@ format_partition(){
 mount_partition(){
   mount /dev/mapper/cryptroot ${MOUNTPOINT}
   mkdir ${MOUNTPOINT}${ESP}
-  mount "${device}"1 ${MOUNTPOINT}${ESP}
+  mount "${device}"p1 ${MOUNTPOINT}${ESP}
 }
 
 #MIRROR_LIST
@@ -105,21 +106,21 @@ add_keyfile(){
   arch_chroot "chmod 600 /boot/initramfs-linux*"
   echo "Add key to swap and root partition"
   echo "Root:"
-  cryptsetup luksAddKey "${device}"3 ${MOUNTPOINT}/crypto_keyfile.bin
+  cryptsetup luksAddKey "${device}"p3 ${MOUNTPOINT}/crypto_keyfile.bin
   echo "Swap:"
-  cryptsetup luksAddKey "${device}"2 ${MOUNTPOINT}/crypto_keyfile.bin
+  cryptsetup luksAddKey "${device}"p2 ${MOUNTPOINT}/crypto_keyfile.bin
 }
 
 #MAKESWAP
 make_swap(){
-  cryptsetup open "${device}"2 swapDevice --key-file ${MOUNTPOINT}/crypto_keyfile.bin
+  cryptsetup open "${device}"p2 swapDevice --key-file ${MOUNTPOINT}/crypto_keyfile.bin
   mkswap /dev/mapper/swapDevice
   echo '/dev/mapper/swapDevice swap swap defaults 0 0' >> ${MOUNTPOINT}/etc/fstab
 }
 
 #SETUP_BOOTLOADER_AND_INITRAMFS
 setup_bootloader(){
-  cryptroot_uuid=$(blkid -o value -s UUID "${device}"3)
+  cryptroot_uuid=$(blkid -o value -s UUID "${device}"p3)
   arch_chroot "pacman -S grub efibootmgr --noconfirm"
 
   # Setup grub config
