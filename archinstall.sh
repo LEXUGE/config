@@ -143,7 +143,7 @@ setup_bootloader(){
 
   mkdir crypto_key_device
   mount /dev/mapper/cryptroot crypto_key_device
-  cryptsetup open --key-file crypto_key_device/crypto_keyfile.bin ${device}2 swapDevice
+  cryptsetup open --key-file crypto_key_device/crypto_keyfile.bin ${device}p2 swapDevice
   umount crypto_key_device
 }" > ${MOUNTPOINT}/etc/initcpio/hooks/openswap
 
@@ -154,7 +154,7 @@ setup_bootloader(){
 help ()
 {
 cat<<HELPEOF
-  This opens the swap encrypted partition /dev/${device}2 in /dev/mapper/swapDevice
+  This opens the swap encrypted partition /dev/${device}p2 in /dev/mapper/swapDevice
 HELPEOF
 }" > ${MOUNTPOINT}/etc/initcpio/install/openswap
 
