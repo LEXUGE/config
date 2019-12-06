@@ -31,6 +31,9 @@ select_device(){
       exit 1
     fi
   done
+  ROOT_PARTITION="${device}p3"
+  SWAP_PARTITION="${device}p2"
+  ESP_PARTITION="${device}p1"
 }
 
 #CREATE_PARTITION
@@ -49,14 +52,14 @@ create_partition(){
 
 #FORMAT_PARTITION
 format_partition(){
-  mkfs.fat -F32 "${device}"p1 > /dev/null
+  mkfs.fat -F32 "${ESP_PARTITION}" > /dev/null
   
   echo "LUKS Setup for '/' partition"
-  cryptsetup luksFormat --type luks1 -s 512 -h sha512 -i 3000 "${device}"p3
+  cryptsetup luksFormat --type luks1 -s 512 -h sha512 -i 3000 "${ROOT_PARTITION}"
   echo "LUKS Setup for SWAP partition"
-  cryptsetup luksFormat -s 512 -h sha512 -i 3000 "${device}"p2
+  cryptsetup luksFormat -s 512 -h sha512 -i 3000 "${SWAP_PARTITION}"
   echo "Open '/' partition"
-  cryptsetup open "${device}"p3 cryptroot
+  cryptsetup open "${SWAP_PARTITION}" cryptroot
   
   mkfs.xfs /dev/mapper/cryptroot > /dev/null
 }
@@ -65,7 +68,7 @@ format_partition(){
 mount_partition(){
   mount /dev/mapper/cryptroot ${MOUNTPOINT}
   mkdir ${MOUNTPOINT}${ESP}
-  mount "${device}"p1 ${MOUNTPOINT}${ESP}
+  mount "${ESP_PARTITION}" ${MOUNTPOINT}${ESP}
 }
 
 #MIRROR_LIST
@@ -106,21 +109,21 @@ add_keyfile(){
   arch_chroot "chmod 600 /boot/initramfs-linux*"
   echo "Add key to swap and root partition"
   echo "Root:"
-  cryptsetup luksAddKey "${device}"p3 ${MOUNTPOINT}/crypto_keyfile.bin
+  cryptsetup luksAddKey "${ROOT_PARTITION}" ${MOUNTPOINT}/crypto_keyfile.bin
   echo "Swap:"
-  cryptsetup luksAddKey "${device}"p2 ${MOUNTPOINT}/crypto_keyfile.bin
+  cryptsetup luksAddKey "${SWAP_PARTITION}" ${MOUNTPOINT}/crypto_keyfile.bin
 }
 
 #MAKESWAP
 make_swap(){
-  cryptsetup open "${device}"p2 swapDevice --key-file ${MOUNTPOINT}/crypto_keyfile.bin
+  cryptsetup open "${SWAP_PARTITION}" swapDevice --key-file ${MOUNTPOINT}/crypto_keyfile.bin
   mkswap /dev/mapper/swapDevice
   echo '/dev/mapper/swapDevice swap swap defaults 0 0' >> ${MOUNTPOINT}/etc/fstab
 }
 
 #SETUP_BOOTLOADER_AND_INITRAMFS
 setup_bootloader(){
-  cryptroot_uuid=$(blkid -o value -s UUID "${device}"p3)
+  cryptroot_uuid=$(blkid -o value -s UUID "${ROOT_PARTITION}")
   arch_chroot "pacman -S grub efibootmgr --noconfirm"
 
   # Setup grub config
@@ -143,7 +146,7 @@ setup_bootloader(){
 
   mkdir crypto_key_device
   mount /dev/mapper/cryptroot crypto_key_device
-  cryptsetup open --key-file crypto_key_device/crypto_keyfile.bin ${device}p2 swapDevice
+  cryptsetup open --key-file crypto_key_device/crypto_keyfile.bin ${SWAP_PARTITION} swapDevice
   umount crypto_key_device
 }" > ${MOUNTPOINT}/etc/initcpio/hooks/openswap
 
@@ -154,7 +157,7 @@ setup_bootloader(){
 help ()
 {
 cat<<HELPEOF
-  This opens the swap encrypted partition /dev/${device}p2 in /dev/mapper/swapDevice
+  This opens the swap encrypted partition /dev/${SWAP_PARTITION} in /dev/mapper/swapDevice
 HELPEOF
 }" > ${MOUNTPOINT}/etc/initcpio/install/openswap
 
