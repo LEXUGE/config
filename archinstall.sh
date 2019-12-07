@@ -197,6 +197,13 @@ Exec = /bin/sh -c 'grub-mkconfig -o /boot/grub/grub.cfg'
 setup_gnome(){
   arch_chroot "pacman -S gnome --noconfirm"
   arch_chroot "systemctl enable gdm.service"
+  arch_chroot "systemctl enable NetworkManager.service"
+  arch_chroot "systemctl enable bluetooth.service"
+  echo "[Settings]
+gtk-icon-theme-name = Adwaita
+gtk-theme-name = Adwaita
+gtk-application-prefer-dark-theme = true
+" > ${MOUNTPOINT}/etc/gtk-3.0/settings.ini
 }
 
 #CREATE_USER
