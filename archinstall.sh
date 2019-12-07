@@ -61,7 +61,7 @@ format_partition(){
   echo "Open '/' partition"
   cryptsetup open "${SWAP_PARTITION}" cryptroot
   
-  mkfs.xfs /dev/mapper/cryptroot > /dev/null
+  mkfs.ext4 /dev/mapper/cryptroot > /dev/null
 }
 
 #MOUNT_PARTITION
@@ -81,7 +81,7 @@ Server = https://mirrors.cqu.edu.cn/archlinux/\$repo/os/\$arch" > /etc/pacman.d/
 
 #INSTALL_BASE
 install_base(){
-  pacstrap ${MOUNTPOINT} base xfsprogs linux-hardened linux-firmware intel-ucode man-db man-pages texinfo nano
+  pacstrap ${MOUNTPOINT} base linux-hardened linux-firmware intel-ucode man-db man-pages texinfo nano
 }
 
 #ESSENTIAL CONFIGURATION
