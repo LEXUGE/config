@@ -59,7 +59,7 @@ format_partition(){
   echo "LUKS Setup for SWAP partition"
   cryptsetup luksFormat -s 512 -h sha512 -i 3000 "${SWAP_PARTITION}"
   echo "Open '/' partition"
-  cryptsetup open "${SWAP_PARTITION}" cryptroot
+  cryptsetup open "${ROOT_PARTITION}" cryptroot
   
   mkfs.ext4 /dev/mapper/cryptroot > /dev/null
 }
