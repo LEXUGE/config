@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = linux*
+
+[Action]
+Description = Change the permission of the initramfs after kernel installation.
+When = PostTransaction
+Exec = /bin/sh -c 'chmod 600 /boot/initramfs-linux*'
+
