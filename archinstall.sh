@@ -81,7 +81,7 @@ Server = https://mirrors.cqu.edu.cn/archlinux/\$repo/os/\$arch" > /etc/pacman.d/
 
 #INSTALL_BASE
 install_base(){
-  pacstrap ${MOUNTPOINT} base linux-hardened linux-firmware intel-ucode man-db man-pages texinfo nano
+  pacstrap ${MOUNTPOINT} base linux linux-firmware intel-ucode man-db man-pages texinfo nano
 }
 
 #ESSENTIAL CONFIGURATION
@@ -188,7 +188,7 @@ When = PostTransaction
 Exec = /bin/sh -c 'grub-mkconfig -o /boot/grub/grub.cfg'
 " > ${MOUNTPOINT}/etc/pacman.d/hooks/98-update-grub.hook
   
-  arch_chroot "mkinitcpio -p linux-hardened"
+  arch_chroot "mkinitcpio -p linux"
   arch_chroot "grub-install --target=x86_64-efi --efi-directory=${ESP} --bootloader-id=GRUB --recheck"
   arch_chroot "grub-mkconfig -o /boot/grub/grub.cfg"
 }
