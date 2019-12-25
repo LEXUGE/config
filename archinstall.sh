@@ -127,7 +127,7 @@ setup_bootloader(){
   arch_chroot "pacman -S grub efibootmgr --noconfirm"
 
   # Setup grub config
-  sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cryptdevice=UUID='"${cryptroot_uuid}"':cryptroot:allow-discards root=\/dev\/mapper\/cryptroot rw"/' ${MOUNTPOINT}/etc/default/grub
+  sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cryptdevice=UUID='"${cryptroot_uuid}"':cryptroot:allow-discards root=\/dev\/mapper\/cryptroot resume=\/dev\/mapper\/swapDevice rw"/' ${MOUNTPOINT}/etc/default/grub
   sed -i '/GRUB_ENABLE_CRYPTODISK=y/s/^#//' ${MOUNTPOINT}/etc/default/grub
 
   # Setup mkinitcpio.conf
