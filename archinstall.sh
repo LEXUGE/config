@@ -119,6 +119,7 @@ make_swap(){
   cryptsetup open "${SWAP_PARTITION}" swapDevice --key-file ${MOUNTPOINT}/crypto_keyfile.bin
   mkswap /dev/mapper/swapDevice
   echo '/dev/mapper/swapDevice swap swap defaults 0 0' >> ${MOUNTPOINT}/etc/fstab
+  echo 'vm.swappiness=1' >> ${MOUNTPOINT}/etc/sysctl.d/99-swappiness.conf
 }
 
 #SETUP_BOOTLOADER_AND_INITRAMFS
