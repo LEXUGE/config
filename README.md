@@ -5,15 +5,16 @@ Harry Ying's configs
 File | Description
 --- | ---
 `emacs/` | Emacs configs
-`native-package-list` | All the official packages installed
-`aur-package-list` | All the AUR packages installed
+`package-list/` | Folder for package lists, including AUR and non-AUR
 `hooks/` | All the pacman hook configs
-`archinstall.sh` | Arch Linux automatic installer
+`scripts/` | All the scripts that help you to utilize configs
 
 # Prerequisites
 Assume you are using Arch Linux in which the package manager is `pacman`.
 ## archinstall.sh
 Kindly check and manually edit the partition name format in `select_device`.
+## git.sh
+Have my secret key imported.
 ## Emacs
 Use [Centaur Emacs](https://github.com/seagle0128/.emacs.d) as the configuration
 base.
