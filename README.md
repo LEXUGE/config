@@ -16,9 +16,10 @@ Kindly check and manually edit the partition name format in `select_device`.
 ## git.sh
 Have my secret key imported.
 ## Emacs
-Use [Centaur Emacs](https://github.com/seagle0128/.emacs.d) as the configuration
-base.
-`custom*.el` refer(s) to my customization upon Centaur Emacs.
+Two viable ways:
+1. Use `emacs.sh`
+2. Use [Centaur Emacs](https://github.com/seagle0128/.emacs.d) as the configuration
+base and `custom*.el` which refer(s) to my customization upon Centaur Emacs.
 ## RLS (Rust Language Server)
 If you want to use RLS, you need to add following components in rustup:
 ```
