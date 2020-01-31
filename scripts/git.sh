@@ -6,3 +6,6 @@ echo "export GPG_TTY=$(tty)" >> ~/.profile
 
 # sign all commits globally
 git config --global commit.gpgsign true
+
+# store the credential
+git config --global credential.helper store
