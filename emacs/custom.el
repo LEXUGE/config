@@ -4,9 +4,9 @@
 ;;;       Put your own configurations in custom-post.el to override default configurations.
 ;;; Code:
 
-;; (setq centaur-logo nil)                        ; Logo file or nil (official logo)
-(setq centaur-full-name "Harry Ying")           ; User full name
-(setq centaur-mail-address "lexugeyky@outlook.com")   ; Email address
+(setq centaur-logo (expand-file-name "custom-logo.png" user-emacs-directory))
+(setq centaur-full-name "Harry Ying")
+(setq centaur-mail-address "lexugeyky@outlook.com")
 ;; (setq centaur-proxy "127.0.0.1:1080")          ; Network proxy
 ;; (setq centaur-package-archives 'emacs-china)   ; Package repo: melpa, melpa-mirror, emacs-china, netease, ustsc, tencent or tuna
 ;; (setq centaur-theme 'light)                    ; Color theme: default, classic, colorful, dark, light, day or night
@@ -15,6 +15,7 @@
 ;; (setq centaur-chinese-calendar nil)            ; Use Chinese calendar or not: t or nil
 ;; (setq centaur-prettify-symbols-alist nil)      ; Alist of symbol prettifications
 ;; (setq centaur-benchmark-init t)                ; Enable initialization benchmark or not: t or nil
+(setq centaur-dashboard-footer-message "Customized by Harry Ying")
 
 ;; For Emacs devel
 ;; (setq package-user-dir (locate-user-emacs-file (format "elpa-%s" emacs-major-version)))
