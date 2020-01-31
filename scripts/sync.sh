@@ -12,7 +12,7 @@ echo "Done"
 
 # sync Emacs configs
 echo -n "Syncing Emacs configs..."
-cp ~/.emacs.d/custom*.el "${SCRIPTPATH}"/../emacs
+cp ~/.emacs.d/custom*.{el,png} "${SCRIPTPATH}"/../emacs
 echo "Done"
 
 # sync Pacman hooks
