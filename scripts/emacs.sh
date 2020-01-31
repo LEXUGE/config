@@ -7,8 +7,6 @@ git clone --depth 1 https://github.com/seagle0128/.emacs.d.git ~/.emacs.d
 
 cp -a ../emacs/. ~/.emacs.d/
 
-systemctl --user enable --now emacs
-systemctl --user start emacs
 echo "[Desktop Entry]
 Name=Emacs
 GenericName=Text Editor
