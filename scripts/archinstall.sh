@@ -17,7 +17,7 @@ contains_element() {
 }
 
 #SELECT DEVICE
-nnselect_device() {
+select_device() {
 	devices_list=($(lsblk -d | awk '{print "/dev/" $1}' | grep 'sd\|hd\|vd\|nvme\|mmcblk'))
 	PS3="$prompt1"
 	echo -e "Attached Devices:\n"
