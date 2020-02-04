@@ -1,7 +1,10 @@
 #!/bin/bash
 
-SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-HOSTNAME=$(< /proc/sys/kernel/hostname tr -d '\n')
+SCRIPTPATH="$(
+	cd "$(dirname "$0")" >/dev/null 2>&1 || exit
+	pwd -P
+)"
+HOSTNAME=$(tr </proc/sys/kernel/hostname -d '\n')
 echo "Profile name: ${HOSTNAME}"
 
 # Cleanup and create new folders
@@ -22,6 +25,6 @@ echo "Done"
 
 # sync package list
 echo -n "Syncing package list..."
-pacman -Qneq > "${SCRIPTPATH}"/../package-list/"${HOSTNAME}"/native-package-list
-pacman -Qmeq > "${SCRIPTPATH}"/../package-list/"${HOSTNAME}"/aur-package-list
+pacman -Qneq >"${SCRIPTPATH}"/../package-list/"${HOSTNAME}"/native-package-list
+pacman -Qmeq >"${SCRIPTPATH}"/../package-list/"${HOSTNAME}"/aur-package-list
 echo "Done"

@@ -19,4 +19,4 @@ Terminal=false
 Categories=Development;TextEditor;
 StartupWMClass=Emacs
 Keywords=Text;Editor;
-" > ~/.local/share/applications/emacs.desktop
+" >~/.local/share/applications/emacs.desktop
