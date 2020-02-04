@@ -24,12 +24,14 @@ evince
 fakeroot
 file-roller
 firefox
+flashplugin
 flex
 fprintd
 fwupd
 gcc
 gdm
 gedit
+geogebra
 git
 gnome-backgrounds
 gnome-books
@@ -84,6 +86,8 @@ gvfs-nfs
 gvfs-smb
 ibus-rime
 intel-ucode
+intellij-idea-community-edition
+iperf3
 libxss
 linux
 linux-firmware
@@ -107,6 +111,7 @@ orca
 pacman-contrib
 patch
 pavucontrol
+pepper-flash
 pkgconf
 python-aiohttp
 python-ghp-import
@@ -117,9 +122,11 @@ rygel
 seahorse
 shadowsocks-libev
 shellcheck
+shfmt
 simple-obfs
 simple-scan
 sipcalc
+skypeforlinux-stable-bin
 spotify
 sqlmap-git
 steam
@@ -150,9 +157,11 @@ tracker-miners
 ttf-fira-code
 ttf-fira-mono
 ttf-fira-sans
+ttf-opensans
 usbutils
 v2ray
 vino
+virtualbox
 wget
 xdg-user-dirs-gtk
 xorg-xrandr
