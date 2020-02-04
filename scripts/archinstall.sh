@@ -214,6 +214,12 @@ create_user() {
 	arch_chroot "passwd ${username}"
 }
 
+#DO_SOME_SETTINGS
+settings() {
+    arch_chroot "gsettings set org.gnome.software download-updates false"
+    arch_chroot "gsettings set org.gnome.software download-updates-notify false"
+}
+
 #FINISH
 finish() {
 	umount -R /mnt
@@ -233,4 +239,5 @@ make_swap
 setup_bootloader
 setup_gnome
 create_user
+settings
 finish
