@@ -1,5 +1,6 @@
 # Config
 Harry Ying's configs
+![Build Status](https://travis-ci.org/LEXUGE/config.svg?branch=master)
 
 # File description
 File | Description
