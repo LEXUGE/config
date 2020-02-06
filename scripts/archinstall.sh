@@ -218,8 +218,6 @@ create_user() {
 settings() {
 	#GNOME software
 	arch_chroot "pacman -S gnome-software-packagekit-plugin --noconfirm"
-	arch_chroot "gsettings set org.gnome.software download-updates false"
-	arch_chroot "gsettings set org.gnome.software download-updates-notify false"
 }
 
 #FINISH
